@@ -18,7 +18,7 @@
 		</div>
 		<div style="width: 222px; overflow: auto;" id="output-field">
 		</div>
-		<input type="button" value="Отправить" id="send-button" />
+		<input type="button" value="Фиксировать" id="send-button" />
 		<p id="error"></p>
 	</body>
 </html>

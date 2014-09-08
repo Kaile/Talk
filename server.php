@@ -4,20 +4,20 @@ if ($command) {
 	$message = post('message');
 		
 	call_user_func($command . 'Message', $message);
-	
-	echo strlen($message);
 }
 
 function saveMessage($message) {
-	$db = mysql_connect('localhost', 'root', 'root');
+	mysql_connect('localhost', 'root', 'root');
 	mysql_set_charset('utf-8');
 	mysql_select_db('talk');
 	mysql_query('INSERT INTO messages(message, date) VALUES ("'. $message .'", NOW())');
-	echo mysql_error();
+	return mysql_error();
 }
 
 function sendMessage($message) {
-	return $message;
+	mysql_connect('localhost', 'root', 'root');
+	mysql_set_charset('utf-8');
+	mysql_select_db('talk');
 }
 
 function post($index = null) {
