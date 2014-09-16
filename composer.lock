@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "29734ec2398ebca25d82c8796b7b43e9",
+    "hash": "8e1b316dfcfd34dbca47a516c600874c",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -64,6 +64,310 @@
                 "markdown-extra"
             ],
             "time": "2014-03-05 16:30:51"
+        },
+        {
+            "name": "components/angular.js",
+            "version": "1.2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/angular.js.git",
+                "reference": "e31b7c59905b7309ad36b990efc0eec95fe18d11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/angular.js/zipball/e31b7c59905b7309ad36b990efc0eec95fe18d11",
+                "reference": "e31b7c59905b7309ad36b990efc0eec95fe18d11",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "name": "angularjs",
+                    "scripts": [
+                        "angular.js"
+                    ],
+                    "files": [
+                        "angular-animate.js",
+                        "angular-animate.min.js",
+                        "angular-animate.min.js.map",
+                        "angular-cookies.js",
+                        "angular-cookies.min.js",
+                        "angular-cookies.min.js.map",
+                        "angular-csp.css",
+                        "angular-loader.js",
+                        "angular-loader.min.js",
+                        "angular-loader.min.js.map",
+                        "angular-mocks.js",
+                        "angular-resource.js",
+                        "angular-resource.min.js",
+                        "angular-resource.min.js.map",
+                        "angular-route.js",
+                        "angular-route.min.js",
+                        "angular-route.min.js.map",
+                        "angular-sanitize.js",
+                        "angular-sanitize.min.js",
+                        "angular-sanitize.min.js.map",
+                        "angular-scenario.js",
+                        "angular-touch.js",
+                        "angular-touch.min.js",
+                        "angular-touch.min.js.map",
+                        "angular.min.js",
+                        "angular.min.js.map",
+                        "i18n/angular-locale_af-na.js",
+                        "i18n/angular-locale_af-za.js",
+                        "i18n/angular-locale_af.js",
+                        "i18n/angular-locale_am-et.js",
+                        "i18n/angular-locale_am.js",
+                        "i18n/angular-locale_ar-001.js",
+                        "i18n/angular-locale_ar-ae.js",
+                        "i18n/angular-locale_ar-bh.js",
+                        "i18n/angular-locale_ar-dz.js",
+                        "i18n/angular-locale_ar-eg.js",
+                        "i18n/angular-locale_ar-iq.js",
+                        "i18n/angular-locale_ar-jo.js",
+                        "i18n/angular-locale_ar-kw.js",
+                        "i18n/angular-locale_ar-lb.js",
+                        "i18n/angular-locale_ar-ly.js",
+                        "i18n/angular-locale_ar-ma.js",
+                        "i18n/angular-locale_ar-om.js",
+                        "i18n/angular-locale_ar-qa.js",
+                        "i18n/angular-locale_ar-sa.js",
+                        "i18n/angular-locale_ar-sd.js",
+                        "i18n/angular-locale_ar-sy.js",
+                        "i18n/angular-locale_ar-tn.js",
+                        "i18n/angular-locale_ar-ye.js",
+                        "i18n/angular-locale_ar.js",
+                        "i18n/angular-locale_bg-bg.js",
+                        "i18n/angular-locale_bg.js",
+                        "i18n/angular-locale_bn-bd.js",
+                        "i18n/angular-locale_bn-in.js",
+                        "i18n/angular-locale_bn.js",
+                        "i18n/angular-locale_ca-ad.js",
+                        "i18n/angular-locale_ca-es.js",
+                        "i18n/angular-locale_ca.js",
+                        "i18n/angular-locale_cs-cz.js",
+                        "i18n/angular-locale_cs.js",
+                        "i18n/angular-locale_da-dk.js",
+                        "i18n/angular-locale_da.js",
+                        "i18n/angular-locale_de-at.js",
+                        "i18n/angular-locale_de-be.js",
+                        "i18n/angular-locale_de-ch.js",
+                        "i18n/angular-locale_de-de.js",
+                        "i18n/angular-locale_de-li.js",
+                        "i18n/angular-locale_de-lu.js",
+                        "i18n/angular-locale_de.js",
+                        "i18n/angular-locale_el-cy.js",
+                        "i18n/angular-locale_el-gr.js",
+                        "i18n/angular-locale_el.js",
+                        "i18n/angular-locale_en-as.js",
+                        "i18n/angular-locale_en-au.js",
+                        "i18n/angular-locale_en-bb.js",
+                        "i18n/angular-locale_en-be.js",
+                        "i18n/angular-locale_en-bm.js",
+                        "i18n/angular-locale_en-bw.js",
+                        "i18n/angular-locale_en-bz.js",
+                        "i18n/angular-locale_en-ca.js",
+                        "i18n/angular-locale_en-dsrt-us.js",
+                        "i18n/angular-locale_en-dsrt.js",
+                        "i18n/angular-locale_en-fm.js",
+                        "i18n/angular-locale_en-gb.js",
+                        "i18n/angular-locale_en-gu.js",
+                        "i18n/angular-locale_en-gy.js",
+                        "i18n/angular-locale_en-hk.js",
+                        "i18n/angular-locale_en-ie.js",
+                        "i18n/angular-locale_en-in.js",
+                        "i18n/angular-locale_en-iso.js",
+                        "i18n/angular-locale_en-jm.js",
+                        "i18n/angular-locale_en-mh.js",
+                        "i18n/angular-locale_en-mp.js",
+                        "i18n/angular-locale_en-mt.js",
+                        "i18n/angular-locale_en-mu.js",
+                        "i18n/angular-locale_en-na.js",
+                        "i18n/angular-locale_en-nz.js",
+                        "i18n/angular-locale_en-ph.js",
+                        "i18n/angular-locale_en-pk.js",
+                        "i18n/angular-locale_en-pr.js",
+                        "i18n/angular-locale_en-pw.js",
+                        "i18n/angular-locale_en-sg.js",
+                        "i18n/angular-locale_en-tc.js",
+                        "i18n/angular-locale_en-tt.js",
+                        "i18n/angular-locale_en-um.js",
+                        "i18n/angular-locale_en-us.js",
+                        "i18n/angular-locale_en-vg.js",
+                        "i18n/angular-locale_en-vi.js",
+                        "i18n/angular-locale_en-za.js",
+                        "i18n/angular-locale_en-zw.js",
+                        "i18n/angular-locale_en.js",
+                        "i18n/angular-locale_es-419.js",
+                        "i18n/angular-locale_es-ar.js",
+                        "i18n/angular-locale_es-bo.js",
+                        "i18n/angular-locale_es-cl.js",
+                        "i18n/angular-locale_es-co.js",
+                        "i18n/angular-locale_es-cr.js",
+                        "i18n/angular-locale_es-do.js",
+                        "i18n/angular-locale_es-ea.js",
+                        "i18n/angular-locale_es-ec.js",
+                        "i18n/angular-locale_es-es.js",
+                        "i18n/angular-locale_es-gq.js",
+                        "i18n/angular-locale_es-gt.js",
+                        "i18n/angular-locale_es-hn.js",
+                        "i18n/angular-locale_es-ic.js",
+                        "i18n/angular-locale_es-mx.js",
+                        "i18n/angular-locale_es-ni.js",
+                        "i18n/angular-locale_es-pa.js",
+                        "i18n/angular-locale_es-pe.js",
+                        "i18n/angular-locale_es-pr.js",
+                        "i18n/angular-locale_es-py.js",
+                        "i18n/angular-locale_es-sv.js",
+                        "i18n/angular-locale_es-us.js",
+                        "i18n/angular-locale_es-uy.js",
+                        "i18n/angular-locale_es-ve.js",
+                        "i18n/angular-locale_es.js",
+                        "i18n/angular-locale_et-ee.js",
+                        "i18n/angular-locale_et.js",
+                        "i18n/angular-locale_eu-es.js",
+                        "i18n/angular-locale_eu.js",
+                        "i18n/angular-locale_fa-af.js",
+                        "i18n/angular-locale_fa-ir.js",
+                        "i18n/angular-locale_fa.js",
+                        "i18n/angular-locale_fi-fi.js",
+                        "i18n/angular-locale_fi.js",
+                        "i18n/angular-locale_fil-ph.js",
+                        "i18n/angular-locale_fil.js",
+                        "i18n/angular-locale_fr-be.js",
+                        "i18n/angular-locale_fr-bf.js",
+                        "i18n/angular-locale_fr-bi.js",
+                        "i18n/angular-locale_fr-bj.js",
+                        "i18n/angular-locale_fr-bl.js",
+                        "i18n/angular-locale_fr-ca.js",
+                        "i18n/angular-locale_fr-cd.js",
+                        "i18n/angular-locale_fr-cf.js",
+                        "i18n/angular-locale_fr-cg.js",
+                        "i18n/angular-locale_fr-ch.js",
+                        "i18n/angular-locale_fr-ci.js",
+                        "i18n/angular-locale_fr-cm.js",
+                        "i18n/angular-locale_fr-dj.js",
+                        "i18n/angular-locale_fr-fr.js",
+                        "i18n/angular-locale_fr-ga.js",
+                        "i18n/angular-locale_fr-gf.js",
+                        "i18n/angular-locale_fr-gn.js",
+                        "i18n/angular-locale_fr-gp.js",
+                        "i18n/angular-locale_fr-gq.js",
+                        "i18n/angular-locale_fr-km.js",
+                        "i18n/angular-locale_fr-lu.js",
+                        "i18n/angular-locale_fr-mc.js",
+                        "i18n/angular-locale_fr-mf.js",
+                        "i18n/angular-locale_fr-mg.js",
+                        "i18n/angular-locale_fr-ml.js",
+                        "i18n/angular-locale_fr-mq.js",
+                        "i18n/angular-locale_fr-ne.js",
+                        "i18n/angular-locale_fr-re.js",
+                        "i18n/angular-locale_fr-yt.js",
+                        "i18n/angular-locale_fr.js",
+                        "i18n/angular-locale_gl-es.js",
+                        "i18n/angular-locale_gl.js",
+                        "i18n/angular-locale_gsw-ch.js",
+                        "i18n/angular-locale_gsw.js",
+                        "i18n/angular-locale_gu-in.js",
+                        "i18n/angular-locale_gu.js",
+                        "i18n/angular-locale_he-il.js",
+                        "i18n/angular-locale_he.js",
+                        "i18n/angular-locale_hi-in.js",
+                        "i18n/angular-locale_hi.js",
+                        "i18n/angular-locale_hr-hr.js",
+                        "i18n/angular-locale_hr.js",
+                        "i18n/angular-locale_hu-hu.js",
+                        "i18n/angular-locale_hu.js",
+                        "i18n/angular-locale_id-id.js",
+                        "i18n/angular-locale_id.js",
+                        "i18n/angular-locale_in.js",
+                        "i18n/angular-locale_is-is.js",
+                        "i18n/angular-locale_is.js",
+                        "i18n/angular-locale_it-it.js",
+                        "i18n/angular-locale_it-sm.js",
+                        "i18n/angular-locale_it.js",
+                        "i18n/angular-locale_iw.js",
+                        "i18n/angular-locale_ja-jp.js",
+                        "i18n/angular-locale_ja.js",
+                        "i18n/angular-locale_kn-in.js",
+                        "i18n/angular-locale_kn.js",
+                        "i18n/angular-locale_ko-kr.js",
+                        "i18n/angular-locale_ko.js",
+                        "i18n/angular-locale_ln-cd.js",
+                        "i18n/angular-locale_ln.js",
+                        "i18n/angular-locale_lt-lt.js",
+                        "i18n/angular-locale_lt.js",
+                        "i18n/angular-locale_lv-lv.js",
+                        "i18n/angular-locale_lv.js",
+                        "i18n/angular-locale_ml-in.js",
+                        "i18n/angular-locale_ml.js",
+                        "i18n/angular-locale_mr-in.js",
+                        "i18n/angular-locale_mr.js",
+                        "i18n/angular-locale_ms-my.js",
+                        "i18n/angular-locale_ms.js",
+                        "i18n/angular-locale_mt-mt.js",
+                        "i18n/angular-locale_mt.js",
+                        "i18n/angular-locale_nl-cw.js",
+                        "i18n/angular-locale_nl-nl.js",
+                        "i18n/angular-locale_nl-sx.js",
+                        "i18n/angular-locale_nl.js",
+                        "i18n/angular-locale_no.js",
+                        "i18n/angular-locale_or-in.js",
+                        "i18n/angular-locale_or.js",
+                        "i18n/angular-locale_pl-pl.js",
+                        "i18n/angular-locale_pl.js",
+                        "i18n/angular-locale_pt-br.js",
+                        "i18n/angular-locale_pt-pt.js",
+                        "i18n/angular-locale_pt.js",
+                        "i18n/angular-locale_ro-ro.js",
+                        "i18n/angular-locale_ro.js",
+                        "i18n/angular-locale_ru-ru.js",
+                        "i18n/angular-locale_ru.js",
+                        "i18n/angular-locale_sk-sk.js",
+                        "i18n/angular-locale_sk.js",
+                        "i18n/angular-locale_sl-si.js",
+                        "i18n/angular-locale_sl.js",
+                        "i18n/angular-locale_sq-al.js",
+                        "i18n/angular-locale_sq.js",
+                        "i18n/angular-locale_sr-cyrl-rs.js",
+                        "i18n/angular-locale_sr-latn-rs.js",
+                        "i18n/angular-locale_sr.js",
+                        "i18n/angular-locale_sv-se.js",
+                        "i18n/angular-locale_sv.js",
+                        "i18n/angular-locale_sw-tz.js",
+                        "i18n/angular-locale_sw.js",
+                        "i18n/angular-locale_ta-in.js",
+                        "i18n/angular-locale_ta.js",
+                        "i18n/angular-locale_te-in.js",
+                        "i18n/angular-locale_te.js",
+                        "i18n/angular-locale_th-th.js",
+                        "i18n/angular-locale_th.js",
+                        "i18n/angular-locale_tl.js",
+                        "i18n/angular-locale_tr-tr.js",
+                        "i18n/angular-locale_tr.js",
+                        "i18n/angular-locale_uk-ua.js",
+                        "i18n/angular-locale_uk.js",
+                        "i18n/angular-locale_ur-pk.js",
+                        "i18n/angular-locale_ur.js",
+                        "i18n/angular-locale_vi-vn.js",
+                        "i18n/angular-locale_vi.js",
+                        "i18n/angular-locale_zh-cn.js",
+                        "i18n/angular-locale_zh-hans-cn.js",
+                        "i18n/angular-locale_zh-hk.js",
+                        "i18n/angular-locale_zh-tw.js",
+                        "i18n/angular-locale_zh.js",
+                        "i18n/angular-locale_zu-za.js",
+                        "i18n/angular-locale_zu.js"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Shim repository for Angular.js",
+            "homepage": "http://angularjs.org",
+            "time": "2014-07-09 16:18:45"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -168,12 +472,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "9f5660c3e3b3d392529d07c4f2cfe0aba2abbe89"
+                "reference": "5a5cf224e19f5c2e9b464d6d4b94a5f5d989d5d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/9f5660c3e3b3d392529d07c4f2cfe0aba2abbe89",
-                "reference": "9f5660c3e3b3d392529d07c4f2cfe0aba2abbe89",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/5a5cf224e19f5c2e9b464d6d4b94a5f5d989d5d8",
+                "reference": "5a5cf224e19f5c2e9b464d6d4b94a5f5d989d5d8",
                 "shasum": ""
             },
             "replace": {
@@ -211,7 +515,7 @@
                 "responsive",
                 "web"
             ],
-            "time": "2014-09-07 04:25:33"
+            "time": "2014-09-16 03:59:09"
         },
         {
             "name": "yiisoft/jquery",
@@ -268,12 +572,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "6c4e21dba529bdf97ec0d796148e18c92f585f80"
+                "reference": "876b7a869817a12bafc2783397b3a34b3baf3ba3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/6c4e21dba529bdf97ec0d796148e18c92f585f80",
-                "reference": "6c4e21dba529bdf97ec0d796148e18c92f585f80",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/876b7a869817a12bafc2783397b3a34b3baf3ba3",
+                "reference": "876b7a869817a12bafc2783397b3a34b3baf3ba3",
                 "shasum": ""
             },
             "require": {
@@ -341,7 +645,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2014-09-07 22:33:30"
+            "time": "2014-09-16 15:41:54"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -481,12 +785,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "4c3e635f8f5f31e889a4fa0d38f729f36b383697"
+                "reference": "942e90d797ea4e6c470659a8aa7cda9d52e48551"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/4c3e635f8f5f31e889a4fa0d38f729f36b383697",
-                "reference": "4c3e635f8f5f31e889a4fa0d38f729f36b383697",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/942e90d797ea4e6c470659a8aa7cda9d52e48551",
+                "reference": "942e90d797ea4e6c470659a8aa7cda9d52e48551",
                 "shasum": ""
             },
             "require": {
@@ -523,7 +827,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2014-09-03 15:46:27"
+            "time": "2014-09-15 15:53:53"
         },
         {
             "name": "phpspec/php-diff",
@@ -565,12 +869,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-codeception.git",
-                "reference": "05833719fc2cc14d6914e7c080267b067009b26e"
+                "reference": "9b2a01ff4798c683d1c85f74b9969cf68f7c482b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/05833719fc2cc14d6914e7c080267b067009b26e",
-                "reference": "05833719fc2cc14d6914e7c080267b067009b26e",
+                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/9b2a01ff4798c683d1c85f74b9969cf68f7c482b",
+                "reference": "9b2a01ff4798c683d1c85f74b9969cf68f7c482b",
                 "shasum": ""
             },
             "require": {
@@ -597,7 +901,7 @@
                 "codeception",
                 "yii2"
             ],
-            "time": "2014-08-24 10:14:35"
+            "time": "2014-09-12 10:42:54"
         },
         {
             "name": "yiisoft/yii2-debug",
@@ -605,12 +909,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "b83cbe8e35bbfc99d95549309186914fb6f33ca7"
+                "reference": "9c96250d43fc85324bfdc7dd24b4df25640ff782"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/b83cbe8e35bbfc99d95549309186914fb6f33ca7",
-                "reference": "b83cbe8e35bbfc99d95549309186914fb6f33ca7",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/9c96250d43fc85324bfdc7dd24b4df25640ff782",
+                "reference": "9c96250d43fc85324bfdc7dd24b4df25640ff782",
                 "shasum": ""
             },
             "require": {
@@ -639,7 +943,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2014-08-28 20:28:03"
+            "time": "2014-09-11 16:43:52"
         },
         {
             "name": "yiisoft/yii2-faker",
@@ -689,12 +993,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "3062e56767747143d75553d52795e048959dfee0"
+                "reference": "9a39032863233d60a71095d8465345dd8ee4f9e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/3062e56767747143d75553d52795e048959dfee0",
-                "reference": "3062e56767747143d75553d52795e048959dfee0",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/9a39032863233d60a71095d8465345dd8ee4f9e1",
+                "reference": "9a39032863233d60a71095d8465345dd8ee4f9e1",
                 "shasum": ""
             },
             "require": {
@@ -724,7 +1028,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2014-09-03 18:09:30"
+            "time": "2014-09-16 15:47:40"
         }
     ],
     "aliases": [
