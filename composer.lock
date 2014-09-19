@@ -420,12 +420,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "8a2bcc6045e92acfbfea252cb6b444bc8c3f171e"
+                "reference": "68675899c002fc95e24194dd84bbc9c813b79fae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/8a2bcc6045e92acfbfea252cb6b444bc8c3f171e",
-                "reference": "8a2bcc6045e92acfbfea252cb6b444bc8c3f171e",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/68675899c002fc95e24194dd84bbc9c813b79fae",
+                "reference": "68675899c002fc95e24194dd84bbc9c813b79fae",
                 "shasum": ""
             },
             "require": {
@@ -464,34 +464,31 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2014-08-27 09:29:44"
+            "time": "2014-09-19 05:52:55"
         },
         {
             "name": "twbs/bootstrap",
-            "version": "dev-master",
+            "version": "v3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "5a5cf224e19f5c2e9b464d6d4b94a5f5d989d5d8"
+                "reference": "6d03173a1aad98e75f7d33e65b411c519176c59a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/5a5cf224e19f5c2e9b464d6d4b94a5f5d989d5d8",
-                "reference": "5a5cf224e19f5c2e9b464d6d4b94a5f5d989d5d8",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/6d03173a1aad98e75f7d33e65b411c519176c59a",
+                "reference": "6d03173a1aad98e75f7d33e65b411c519176c59a",
                 "shasum": ""
-            },
-            "replace": {
-                "twitter/bootstrap": "self.version"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "3.0.x-dev"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "Apache-2.0"
             ],
             "authors": [
                 {
@@ -503,19 +500,13 @@
                     "email": "markdotto@gmail.com"
                 }
             ],
-            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "description": "Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.",
             "homepage": "http://getbootstrap.com",
             "keywords": [
-                "JS",
-                "css",
-                "framework",
-                "front-end",
-                "less",
-                "mobile-first",
-                "responsive",
-                "web"
+                "bootstrap",
+                "css"
             ],
-            "time": "2014-09-16 03:59:09"
+            "time": "2013-12-05 16:09:10"
         },
         {
             "name": "yiisoft/jquery",
@@ -568,16 +559,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "dev-master",
+            "version": "2.0.0-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "876b7a869817a12bafc2783397b3a34b3baf3ba3"
+                "reference": "2a71e361b3cebf872ecaba45feaf23a7d2a1491d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/876b7a869817a12bafc2783397b3a34b3baf3ba3",
-                "reference": "876b7a869817a12bafc2783397b3a34b3baf3ba3",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/2a71e361b3cebf872ecaba45feaf23a7d2a1491d",
+                "reference": "2a71e361b3cebf872ecaba45feaf23a7d2a1491d",
                 "shasum": ""
             },
             "require": {
@@ -590,9 +581,6 @@
                 "yiisoft/jquery-pjax": "*",
                 "yiisoft/yii2-composer": "*"
             },
-            "bin": [
-                "yii"
-            ],
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -645,24 +633,24 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2014-09-16 15:41:54"
+            "time": "2014-04-13 21:58:59"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
-            "version": "dev-master",
+            "version": "2.0.0-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "a3ab453aa0d5e0b493207928ea220e83a6a0ae69"
+                "reference": "d2518d1f6fb0b3e0e3aba50b9c35f56d580eb3c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/a3ab453aa0d5e0b493207928ea220e83a6a0ae69",
-                "reference": "a3ab453aa0d5e0b493207928ea220e83a6a0ae69",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/d2518d1f6fb0b3e0e3aba50b9c35f56d580eb3c4",
+                "reference": "d2518d1f6fb0b3e0e3aba50b9c35f56d580eb3c4",
                 "shasum": ""
             },
             "require": {
-                "twbs/bootstrap": "3.2.* | 3.1.* | 3.0.*",
+                "twbs/bootstrap": "3.0.*",
                 "yiisoft/yii2": "*"
             },
             "type": "yii2-extension",
@@ -678,7 +666,9 @@
             "authors": [
                 {
                     "name": "Qiang Xue",
-                    "email": "qiang.xue@gmail.com"
+                    "email": "qiang.xue@gmail.com",
+                    "homepage": "http://www.yiiframework.com/",
+                    "role": "Founder and project lead"
                 }
             ],
             "description": "The Twitter Bootstrap extension for the Yii framework",
@@ -686,7 +676,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2014-09-05 17:37:52"
+            "time": "2014-04-13 21:58:59"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -785,12 +775,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "942e90d797ea4e6c470659a8aa7cda9d52e48551"
+                "reference": "7f6c460ca74ee988a79a3d0015be25ee3d4726b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/942e90d797ea4e6c470659a8aa7cda9d52e48551",
-                "reference": "942e90d797ea4e6c470659a8aa7cda9d52e48551",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/7f6c460ca74ee988a79a3d0015be25ee3d4726b2",
+                "reference": "7f6c460ca74ee988a79a3d0015be25ee3d4726b2",
                 "shasum": ""
             },
             "require": {
@@ -827,7 +817,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2014-09-15 15:53:53"
+            "time": "2014-09-19 08:17:45"
         },
         {
             "name": "phpspec/php-diff",
@@ -909,12 +899,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "9c96250d43fc85324bfdc7dd24b4df25640ff782"
+                "reference": "d653a52d38d2abdd3dca2edb170949308e87147e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/9c96250d43fc85324bfdc7dd24b4df25640ff782",
-                "reference": "9c96250d43fc85324bfdc7dd24b4df25640ff782",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/d653a52d38d2abdd3dca2edb170949308e87147e",
+                "reference": "d653a52d38d2abdd3dca2edb170949308e87147e",
                 "shasum": ""
             },
             "require": {
@@ -943,7 +933,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2014-09-11 16:43:52"
+            "time": "2014-09-19 03:25:38"
         },
         {
             "name": "yiisoft/yii2-faker",
@@ -989,16 +979,16 @@
         },
         {
             "name": "yiisoft/yii2-gii",
-            "version": "dev-master",
+            "version": "2.0.0-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "9a39032863233d60a71095d8465345dd8ee4f9e1"
+                "reference": "25c74e5f8f5c75bc3d76c26c44bcd132cb3af212"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/9a39032863233d60a71095d8465345dd8ee4f9e1",
-                "reference": "9a39032863233d60a71095d8465345dd8ee4f9e1",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/25c74e5f8f5c75bc3d76c26c44bcd132cb3af212",
+                "reference": "25c74e5f8f5c75bc3d76c26c44bcd132cb3af212",
                 "shasum": ""
             },
             "require": {
@@ -1019,7 +1009,9 @@
             "authors": [
                 {
                     "name": "Qiang Xue",
-                    "email": "qiang.xue@gmail.com"
+                    "email": "qiang.xue@gmail.com",
+                    "homepage": "http://www.yiiframework.com/",
+                    "role": "Founder and project lead"
                 }
             ],
             "description": "The Gii extension for the Yii framework",
@@ -1028,7 +1020,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2014-09-16 15:47:40"
+            "time": "2014-04-13 21:58:59"
         }
     ],
     "aliases": [
