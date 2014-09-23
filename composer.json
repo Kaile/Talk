@@ -35,6 +35,9 @@
         ]
     },
     "extra": {
+    	"asset-installer-paths": {
+    		"bower-asset-library": "vendor/bower"
+    	},
         "yii\\composer\\Installer::postCreateProject": {
             "setPermission": [
                 {
