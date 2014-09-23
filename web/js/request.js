@@ -1,36 +1,3 @@
-function Request(params) {
-	this.uri = params.uri;
-	this.data = params.data;
-	this.method = params.method;
-	
-	var dfd = new $.Deferred();
-	
-	this.success = function(data) {
-		console.info('I get data: ' + data);
-		dfd.resolve();
-		return data;
-	};
-	
-	this.error = function(errorMsg) {
-		dfd.reject();
-		console.error('I get error: ' + errorMsg);
-	};
-	
-	$.ajax({
-		url: this.uri,
-		data: this.data,
-		type: this.method,
-		success: function (data, textStatus, jqXHR) {
-			this.success();
-		},
-		error: function (jqXHR, textStatus, errorThrown) {
-			this.error();
-		}
-	});
-	
-	return dfd.promise();
-}
-
 function post(uri, data) {
 	this.uri = uri;
 	this.data = data;
@@ -55,6 +22,20 @@ function post(uri, data) {
 	return dfd.promise();
 }
 
-function get(params) {
-	return $.get(params.url, params.data, params.success);
+function get(uri, data) {
+	data = data || {};
+	
+	var dfd = $.Deffered();
+	
+	$.ajax({
+		url: uri,
+		type: 'GET',
+		data: data,
+		success: function (data, textStatus, jqXHR) {
+			dfd.resolve(data);
+		},
+		error: function (jqXHR, textStatus, errorThrown) {
+			dfd.reject();
+		}
+	});
 }
