@@ -96,6 +96,6 @@ class SiteController extends Controller
 	
 	public function actionStore() 
 	{
-		return 'ok';
+		
 	}
 }
