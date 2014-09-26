@@ -1,14 +1,14 @@
 function softOutput(selector, text, freq) {
-    var freq   = freq || 100;
+    var freq   = freq || 500;
 
     if (text.length < 2) {
-        $(selector).text(text);
+        $(selector).text($(selector).text() + text);
         return;
     }
 
     for (var i = 0; i < text.length; ++i) {
         setTimeout(function() {
-            $(selector).append(text[i]);
+            $(selector).text($(selector).text() + text[i]);
         }, freq);
     }
     return;

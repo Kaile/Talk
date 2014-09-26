@@ -4,23 +4,19 @@ $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+    <div ng-controller="ReceiveTextCtrl">
+        <div  class="text-placeholder" id="outputText"></div>
     </div>
+
 
     <div class="body-content" style="margin: auto;">
 
-        <div class="row" ng-controller="SendTextCtrl" style="margin: auto;">
+        <div class="row" ng-controller="SendTextCtrl">
             <textarea class="text-placeholder"
 				ng-model="inputText"
 				ng-change="storeText()"
-			>
-			</textarea>
-			<div  class="text-placeholder" id="outputText"  style="float: right;"><div>
+			></textarea>
+
         </div>
 
     </div>

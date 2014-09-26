@@ -1,8 +1,12 @@
+
+//TODO: Сделать параметр, указывающий на то, кому отправляется сообщение
+//TODO: Теперь встает проблема что отправлять при удалении текста
 function SendTextCtrl($scope) {
 	$scope.inputText = '';
     $scope.startIndex = 0;
     $scope.isOn = false;
     $scope.intervalId = null;
+    $scope.intervalPeriod = 500; //ms
 
     $scope.turnOn = function() {
         $scope.isOn = true;
@@ -24,32 +28,12 @@ function SendTextCtrl($scope) {
                 clearInterval($scope.intervalId);
                 $scope.isOn = false;
             }
-        }, 500);
+        }, $scope.intervalPeriod);
     }
 
-    //TODO: Сделать отправку текста порциями
 	$scope.storeText = function() {
         if (! $scope.isOn) {
             $scope.turnOn();
         }
 	};
-
-    var interval = 500;
-
-	//TODO: Нужно сделать приостановку запросов если текста для вывода нет
-	$scope.loadText = function() {
-		setInterval(function() {
-			get('?r=site/load')
-				.done(function(data) {
-					if (data.length) {
-						softOutput('#outputText', data);
-					}
-				})
-				.fail(function() {
-					console.error('Can\'t retrieve data');
-				});
-		}, interval);
-	};
-	
-	//setTimeout($scope.loadText(), 1000);
 }
