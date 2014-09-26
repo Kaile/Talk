@@ -1,4 +1,4 @@
-function SendTextCtrl($scope, $http) {
+function SendTextCtrl($scope) {
 	$scope.inputText = '';
 	
 	$scope.storeText = function() {
@@ -10,19 +10,17 @@ function SendTextCtrl($scope, $http) {
 				console.error(data);
 			});
 	};
-	//Нужно сделать приостановку запросов
+	//TODO: Нужно сделать приостановку запросов если текста для вывода нет
 	$scope.loadText = function() {
 		setInterval(function() {
 			get('?r=site/load')
 				.done(function(data) {
 					if (data.length) {
 						$('#outputText').text(data);
-					} else {
-						setTimeout(true, 5000);
 					}
 				})
 				.fail(function() {
-					console.error('Can\'t retreave data');
+					console.error('Can\'t retrieve data');
 				});
 		}, 100);		
 	};
