@@ -1,6 +1,6 @@
 function post(uri, data) {
-	this.uri = uri;
-	this.data = data;
+	var uri = uri;
+	var data = data;
 	var dfd = new $.Deferred();
 	
 	$.ajax({
@@ -11,7 +11,7 @@ function post(uri, data) {
 			if (data === '1') {
 				dfd.resolve();
 			} else {
-				dfd.reject();
+				dfd.reject(data);
 			}
 		},
 		error: function (jqXHR, textStatus, errorThrown) {
@@ -23,9 +23,9 @@ function post(uri, data) {
 }
 
 function get(uri, data) {
-	data = data || {};
+	var data = data || {};
 	
-	var dfd = $.Deffered();
+	var dfd = new $.Deferred();
 	
 	$.ajax({
 		url: uri,
@@ -38,4 +38,6 @@ function get(uri, data) {
 			dfd.reject();
 		}
 	});
+	
+	return dfd.promise();
 }

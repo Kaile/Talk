@@ -96,6 +96,28 @@ class SiteController extends Controller
 	
 	public function actionStore() 
 	{
-		return true;
+		if (! Yii::$app->request->post('text')) {
+			return 'Text is not sended';
+		}
+		
+		$buffer = new \app\models\MessageBuffer;
+		
+		$buffer->user_id = 1;
+		$buffer->data = Yii::$app->request->post('text');
+		$buffer->date = date('Y.m.d h:i:s');
+		
+		return $buffer->save();
+	}
+	
+	public function actionLoad() 
+	{
+		$row = (new \yii\db\Query())
+			->select('id, MIN(date), data')
+			->from('message_buffer')
+			->one();
+		
+		$res = $row['data'];
+		\app\models\MessageBuffer::deleteAll(['id' => $row['id']]);
+		return $res;
 	}
 }

@@ -19,9 +19,8 @@ $this->title = 'My Yii Application';
 				ng-model="inputText"
 				ng-change="storeText()"
 			>
-					
 			</textarea>
-			<textarea ng-model="outputText" class="text-placeholder" style="float: right;"></textarea>
+			<div  class="text-placeholder" id="outputText"  style="float: right;"><div>
         </div>
 
     </div>
