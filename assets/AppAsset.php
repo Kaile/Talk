@@ -23,6 +23,7 @@ class AppAsset extends AssetBundle
     public $js = [
 		'js/SendTextCtrl.js',
 		'js/request.js',
+        'js/script.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
