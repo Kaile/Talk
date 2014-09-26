@@ -8,7 +8,7 @@ function post(uri, data) {
 		data: data,
 		type: 'POST',
 		success: function (data, textStatus, jqXHR) {
-			if (data === 1) {
+			if (data === '1') {
 				dfd.resolve();
 			} else {
 				dfd.reject();

@@ -12,15 +12,16 @@ $this->title = 'My Yii Application';
         <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
     </div>
 
-    <div class="body-content">
+    <div class="body-content" style="margin: auto;">
 
-        <div class="row" ng-controller="SendTextCtrl">
-            <textarea
+        <div class="row" ng-controller="SendTextCtrl" style="margin: auto;">
+            <textarea class="text-placeholder"
 				ng-model="inputText"
 				ng-change="storeText()"
 			>
 					
 			</textarea>
+			<textarea ng-model="outputText" class="text-placeholder" style="float: right;"></textarea>
         </div>
 
     </div>
