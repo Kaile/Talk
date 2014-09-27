@@ -3,13 +3,27 @@
  */
 
 /**
- * 
+ * Контроллер, описывающий функции загрузки данных с сервера
  * @param {Object} $scope - Пространство имен контроллера
  */
 function ReceiveTextCtrl($scope) {
+	
+	/**
+	 * Идентификатор функции setInterval запускаемой в пространстве контроллера
+	 * @type Number
+	 */
     $scope.intervalId = null;
+	
+	/**
+	 * Индикатор работы функции загрузки данных с сервера
+	 * @type Boolean
+	 */
     $scope.isOn = false;
 
+	/**
+	 * 
+	 * @type Number
+	 */
     var intervalLoad = 300;
 	var intervalCheck = 3000;
 
@@ -33,6 +47,10 @@ function ReceiveTextCtrl($scope) {
         }, intervalLoad);
     };
 
+	/**
+	 * Через определенный интервал времени запускает функцию загрузки текста с 
+	 * сервера
+	 */
 	setInterval(function() {
 		if (! $scope.isOn) {
 			$scope.turnOn();

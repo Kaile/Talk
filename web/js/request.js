@@ -1,3 +1,10 @@
+/**
+ * Функция используется для отправки запроса POST методом
+ * для записи дынных
+ * @param {String} uri
+ * @param {Object} data
+ * @returns {$.Promise}
+ */
 function post(uri, data) {
 	var uri = uri;
 	var data = data;
@@ -22,6 +29,12 @@ function post(uri, data) {
 	return dfd.promise();
 }
 
+/**
+ * Функция используется для получения данных с сервера GET методом
+ * @param {String} uri
+ * @param {Object} data
+ * @returns {$.Promise}
+ */
 function get(uri, data) {
 	var data = data || {};
 	
