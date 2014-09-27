@@ -12,6 +12,7 @@ $this->title = 'My Yii Application';
     <div class="body-content" style="margin: auto;">
 
         <div class="row" ng-controller="SendTextCtrl">
+            <div id="users-list"></div>
             <textarea class="text-placeholder"
 				ng-model="inputText"
 				ng-change="storeText()"

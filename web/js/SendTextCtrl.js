@@ -12,6 +12,8 @@ function SendTextCtrl($scope) {
     $scope.intervalId = null;
     $scope.intervalPeriod = 800; //ms
 
+    loadUsersList($('#users-list'));
+
     $scope.turnOn = function() {
         $scope.isOn = true;
 

@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\base\Security;
 
 /**
  * This is the model class for table "users".
@@ -87,4 +88,15 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         }
         return false;
 	}
+
+    public function beforeSave()
+    {
+        $this->password = hash('sha256', $this->password);
+		$this->registered = date('Y/m/d h:i:s');
+		$security = new Security();
+		$this->auth_key = $security->generateRandomString();
+		$this->access_token = $security->generateRandomString();
+
+		return true;
+    }
 }

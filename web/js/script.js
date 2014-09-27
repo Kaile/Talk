@@ -1,4 +1,9 @@
+function urlHelper(action, ctrl) {
+    var ctrl = ctrl || 'site';
+    var prefix = '?r=';
 
+    return prefix + ctrl + '/' + action;
+}
 /**
  * 
  * @param {jQuery} selector - селектор области куда выводится текст
@@ -35,6 +40,24 @@ function softOutput(selector, text, intervalLoad, freq) {
 	}, freq);
 }
 
-function loadUsersList() {
-	
+/**
+ * Функция выполняет добавление данных пользователей в место выбранное через селектор
+ * @param selector - jQuery селектор для вставки внутрь данных
+ */
+function loadUsersList(selector) {
+    get(urlHelper('get-users-list'))
+        .done(function(users) {
+            users = JSON.parse(users);
+            //TODO: Здесь надо сделать создание выпадающего списка и вставку по селектору
+            var dropList = new DropList('users');
+
+            users.forEach(function(data) {
+                dropList.addElement(data.id, data.login);
+            });
+
+            selector.html(dropList.getContent());
+        })
+        .fail(function() {
+           console.log('Can\'t load users data');
+        });
 }

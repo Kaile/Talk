@@ -2,8 +2,10 @@
 
 namespace app\controllers;
 
+use app\models\MessageBuffer;
 use app\models\Users;
 use Yii;
+use yii\db\Query;
 use yii\filters\AccessControl;
 use yii\helpers\Json;
 use yii\web\Controller;
@@ -102,7 +104,7 @@ class SiteController extends Controller
 			return 'Text is not sended';
 		}
 		
-		$buffer = new \app\models\MessageBuffer;
+		$buffer = new MessageBuffer;
 		
 		$buffer->user_id = 1;
 		$buffer->data = Yii::$app->request->post('text');
@@ -113,13 +115,17 @@ class SiteController extends Controller
 	
 	public function actionLoad() 
 	{
-		$row = (new \yii\db\Query())
+		$row = (new Query())
 			->select('id, MIN(date), data')
 			->from('message_buffer')
 			->one();
-		
-		$res = $row['data'];
-		\app\models\MessageBuffer::deleteAll(['id' => $row['id']]);
+
+        $res = $row['data'];
+
+		if ( ! empty($res) ) {
+            MessageBuffer::deleteAll(['id' => $row['id']]);
+        }
+
 		return $res;
 	}
 	
