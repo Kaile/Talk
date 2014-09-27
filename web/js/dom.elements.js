@@ -19,12 +19,12 @@ function DropList(name) {
     var content = '';
 
     this.addElement = function(value, text, selected) {
-        selected = selected || false;
+        selected = selected || ' ';
 
         content += tagged(
             text,
             'option',
-            'value="' + value + '"' + (selected) ? ' selected' : ''
+            'value="' + value + '"' + selected
         );
     }
 };
