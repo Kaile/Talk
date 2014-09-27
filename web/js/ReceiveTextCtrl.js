@@ -1,11 +1,17 @@
 /**
  * Created by Mihail Kornilov on 26.09.2014.
  */
+
+/**
+ * 
+ * @param {Object} $scope - Пространство имен контроллера
+ */
 function ReceiveTextCtrl($scope) {
     $scope.intervalId = null;
     $scope.isOn = false;
 
-    var interval = 700;
+    var intervalLoad = 300;
+	var intervalCheck = 3000;
 
     //TODO: Нужно сделать приостановку запросов если текста для вывода нет
     $scope.turnOn = function () {
@@ -15,7 +21,7 @@ function ReceiveTextCtrl($scope) {
             get('?r=site/load')
                 .done(function (data) {
                     if (data.length) {
-                        softOutput('#outputText', data);
+                        softOutput('#outputText', data, intervalLoad);
                     } else {
                         $scope.isOn = false;
                         clearInterval($scope.intervalId);
@@ -24,8 +30,12 @@ function ReceiveTextCtrl($scope) {
                 .fail(function () {
                     console.error('Can\'t retrieve data');
                 });
-        }, interval);
+        }, intervalLoad);
     };
 
-    setTimeout($scope.turnOn(), 1000);
+	setInterval(function() {
+		if (! $scope.isOn) {
+			$scope.turnOn();
+		}
+	}, intervalCheck);
 }

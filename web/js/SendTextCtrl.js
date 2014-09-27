@@ -6,7 +6,7 @@ function SendTextCtrl($scope) {
     $scope.startIndex = 0;
     $scope.isOn = false;
     $scope.intervalId = null;
-    $scope.intervalPeriod = 500; //ms
+    $scope.intervalPeriod = 800; //ms
 
     $scope.turnOn = function() {
         $scope.isOn = true;
@@ -29,7 +29,7 @@ function SendTextCtrl($scope) {
                 $scope.isOn = false;
             }
         }, $scope.intervalPeriod);
-    }
+    };
 
 	$scope.storeText = function() {
         if (! $scope.isOn) {
