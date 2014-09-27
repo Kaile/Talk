@@ -120,4 +120,8 @@ class SiteController extends Controller
 		\app\models\MessageBuffer::deleteAll(['id' => $row['id']]);
 		return $res;
 	}
+	
+	public function actionGetUsersList() {
+		
+	}
 }

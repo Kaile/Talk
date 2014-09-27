@@ -34,3 +34,7 @@ function softOutput(selector, text, intervalLoad, freq) {
 		}
 	}, freq);
 }
+
+function loadUsersList() {
+	
+}
