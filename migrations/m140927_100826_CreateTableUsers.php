@@ -19,7 +19,7 @@ class m140927_100826_CreateTableUsers extends Migration
 		
 		$this->insert(self::TABLE, [
 			'login' => 'admin',
-			'password' => crypt('admin', CRYPT_SHA256),
+			'password' => hash('sha256', 'admin'),
 			'registered' => date('Y/m/d h:i:s'),
 			'auth_key' => 'admin_auth_key',
 			'access_token' => 'admin_access_token',

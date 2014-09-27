@@ -2,8 +2,10 @@
 
 namespace app\controllers;
 
+use app\models\Users;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
@@ -121,7 +123,10 @@ class SiteController extends Controller
 		return $res;
 	}
 	
-	public function actionGetUsersList() {
-		
+	public function actionGetUsersList()
+    {
+		$result = Users::find()->addOrderBy('login ASC')->all();
+
+        return Json::encode($result);
 	}
 }
