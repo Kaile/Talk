@@ -26,10 +26,10 @@ function softOutput(selector, text, intervalLoad, freq) {
 
 	var intervalId = setInterval(function() {
 		if (text.length > 1) {
-			$(selector).text($(selector).text() + text.substr(0, amount));
+			selector.text(selector.text() + text.substr(0, amount));
 			text = text.substr(amount);
 		} else {
-			$(selector).text($(selector).text() + text);
+			selector.text(selector.text() + text);
 			clearInterval(intervalId);
 		}
 	}, freq);

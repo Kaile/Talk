@@ -35,7 +35,7 @@ function ReceiveTextCtrl($scope) {
             get('?r=site/load')
                 .done(function (data) {
                     if (data.length) {
-                        softOutput('#outputText', data, intervalLoad);
+                        softOutput($('#outputText'), data, intervalLoad);
                     } else {
                         $scope.isOn = false;
                         clearInterval($scope.intervalId);
