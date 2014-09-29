@@ -107,14 +107,18 @@ class SiteController extends Controller
 	public function actionStore() 
 	{
 		if (! Yii::$app->request->post('text')) {
-			return 'Text is not sended';
+			return Yii::t('app', 'Text is not sended');
 		}
-		
+		if (! Yii::$app->request->post('id_to')) {
+			return Yii::t('app', 'Not entered user identifier');
+		}
 		$buffer = new MessageBuffer;
 		
 		$buffer->user_id = 1;
 		$buffer->data = Yii::$app->request->post('text');
 		$buffer->date = date('Y.m.d h:i:s');
+		$buffer->from = (int) Yii::$app->user->identity->id;
+		$buffer->to   = (int) Yii::$app->request->post('id_to');
 		
 		return $buffer->save();
 	}
@@ -124,6 +128,7 @@ class SiteController extends Controller
 		$row = (new Query())
 			->select('id, MIN(date), data')
 			->from('message_buffer')
+			->where(['to' => Yii::$app->user->identity->id])
 			->one();
 
         $res = $row['data'];

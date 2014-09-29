@@ -20,8 +20,10 @@ function SendTextCtrl($scope) {
 
             $scope.startIndex = $scope.inputText.length;
 
+
+
             if (data.length) {
-                post('?r=site/store', {text: data})
+                post('?r=site/store', {text: data, id_to: $('#users-list').val()})
                     .done(function () {
                         console.log('text is saved');
                     })

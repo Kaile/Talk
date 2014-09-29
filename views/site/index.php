@@ -13,7 +13,7 @@ $this->title = 'My Yii Application';
     <div class="body-content" style="margin: auto;">
 
         <div class="row" ng-controller="SendTextCtrl">
-            <div id="users-list">
+            <div id="list">
 				<?php
 				$items = [];
 				foreach ($users as $user) {
@@ -24,7 +24,10 @@ $this->title = 'My Yii Application';
 				echo yii\helpers\Html::dropDownList(
 					'users-list', 
 					'', 
-					$items
+					$items,
+					[
+						'id' => 'users-list',
+					]
 					);
 				?>
 			</div>
