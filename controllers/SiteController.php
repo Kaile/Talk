@@ -53,7 +53,13 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+		$query = new Query();
+		$users = $query
+			->select('id, login')
+			->from('users')
+			->where(['<>', 'id', Yii::$app->user->identity->id])
+			->all();
+        return $this->render('index', ['users' => $users]);
     }
 
     public function actionLogin()

@@ -61,9 +61,9 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 		return new static(self::findOne(['access_token' => $token]));
 	}
 
-    public static function findByUserName($username)
+    public static function findByLogin($login)
     {
-        return new static(self::findOne(['login' => $username]));
+        return new static(self::findOne(['login' => $login]));
     }
 
 	public function getAuthKey()
