@@ -42,7 +42,7 @@ function ReceiveTextCtrl($scope) {
                     }
                 })
                 .fail(function () {
-                    console.error('Can\'t retrieve data');
+                    logError('Can\'t retrieve data');
                 });
         }, intervalLoad);
     };
