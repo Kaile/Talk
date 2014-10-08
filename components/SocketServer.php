@@ -9,6 +9,19 @@ namespace app\components;
  */
 abstract class SocketServer implements \SplSubject
 {
+	
+	const HANDSHAKE = 
+<<<HANDSHAKE
+	HTTP/1.1 101 WebSocket Protocol Handshake\n
+	Date: Fri, 10 Feb 2012 17:38:18 GMT\n
+	Connection: Upgrade\n
+	Server: Kaazing Gateway\n
+	Upgrade: WebSocket\n
+	Access-Control-Allow-Origin: http://websocket.org\n
+	Access-Control-Allow-Credentials: true\n
+	Sec-WebSocket-Accept: rLHCkw/SKsO9GAH/ZSFhBATDKrU=\n
+	Access-Control-Allow-Headers: content-type
+HANDSHAKE;
 	/**
 	 * Объект для хранения объектов наблюдателей для регистрации событий
 	 * @var \SplObjectStorage
@@ -194,6 +207,8 @@ abstract class SocketServer implements \SplSubject
 		$this->changeStatus("Accept socket : {$msgsock}" . PHP_EOL);
 		
 		$this->setMsgsock($msgsock);
+		$this->read();
+		$this->write(self::HANDSHAKE);
 		
 		return $this;
 	}
@@ -207,7 +222,7 @@ abstract class SocketServer implements \SplSubject
 	public function read()
 	{
 		do {
-			if ( false === ($buf = socket_read($this->getMsgsock(), 2048, PHP_NORMAL_READ)) ) {
+			if ( false === ($buf = socket_read($this->getMsgsock(), 2048)) ) {
 				throw new SocketServerException('Error when socket read: ' . $this->getErrorString($this->getMsgsock()));
 			}
 		} while('' === trim($buf));
@@ -247,10 +262,9 @@ abstract class SocketServer implements \SplSubject
 		$this->listen();
 		
 		$this->changeStatus(" ... Server is starts ..." . PHP_EOL);	
+		$this->accept();
 		
 		do {
-			$this->accept();
-			
 			$data = $this->read();
 			
 			$this->getProtocol()->load($data);
