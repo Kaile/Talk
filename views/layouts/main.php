@@ -42,6 +42,7 @@ AppAsset::register($this);
 					 'url' => ['/site/logout'],
 					 'linkOptions' => ['data-method' => 'post']],
 					['label' => Yii::t('app', 'Users'), 'url' => ['/users/index']],
+					['label' => Yii::t('app', 'User Information'), 'url' => ['/user-info/index']],
 				],
 			]);
             NavBar::end();
