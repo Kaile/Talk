@@ -8,9 +8,11 @@ use Yii;
  * This is the model class for table "message_buffer".
  *
  * @property integer $id
- * @property integer $user_id
  * @property string $data
  * @property string $date
+ * @property string $from
+ * @property string $to
+ * @property string $cmd
  */
 class MessageBuffer extends \yii\db\ActiveRecord
 {
@@ -28,9 +30,11 @@ class MessageBuffer extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id'], 'integer'],
             [['date'], 'safe'],
-            [['data'], 'string', 'max' => 255]
+            [['data'], 'string', 'max' => 255],
+			[['from'], 'integer'],
+			[['to'], 'integer'],
+			[['cmd'], 'string', 'max' => 255],
         ];
     }
 
@@ -41,9 +45,17 @@ class MessageBuffer extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'user_id' => Yii::t('app', 'User ID'),
             'data' => Yii::t('app', 'Data'),
             'date' => Yii::t('app', 'Date'),
+			'from' => Yii::t('app', 'Sended from'),
+			'to' => Yii::t('app', 'Sended to'),
+			'cmd' => Yii::t('app', 'Command'),
         ];
     }
+
+	public function beforeSave()
+	{
+		$this->date = date('Y/m/d h:i:s');
+		return true;
+	}
 }

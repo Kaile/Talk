@@ -1,5 +1,3 @@
-
-//TODO: Сделать параметр, указывающий на то, кому отправляется сообщение
 //TODO: Теперь встает проблема что отправлять при удалении текста
 /**
  * Контроллер, описывающий функции отправки данных на сервер
@@ -36,7 +34,8 @@ function SendTextCtrl($scope) {
             $scope.startIndex = $scope.inputText.length;
 
             if (data.length) {
-                post('?r=site/store', {text: data, id_to: $('#users-list').val()})
+                //TODO: Придумать принцип для удобного расширения команд и их обработки
+                post(urlHelper('store'), {text: data, id_to: $('#users-list').val(), cmd: 'store'})
                     .done(function () {
                         logInfo('text is saved');
                     })

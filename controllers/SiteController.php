@@ -15,6 +15,8 @@ use app\models\ContactForm;
 
 class SiteController extends Controller
 {
+	const DEFAULT_CMD = 'store';
+
     public function behaviors()
     {
         return [
@@ -51,6 +53,9 @@ class SiteController extends Controller
         ];
     }
 
+	/**
+	 * @return string
+	 */
     public function actionIndex()
     {
 		$query = new Query();
@@ -62,6 +67,9 @@ class SiteController extends Controller
         return $this->render('index', ['users' => $users]);
     }
 
+	/**
+	 * @return string|\yii\web\Response
+	 */
     public function actionLogin()
     {
         if (!\Yii::$app->user->isGuest) {
@@ -78,6 +86,9 @@ class SiteController extends Controller
         }
     }
 
+	/**
+	 * @return \yii\web\Response
+	 */
     public function actionLogout()
     {
         Yii::$app->user->logout();
@@ -85,6 +96,9 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+	/**
+	 * @return string|\yii\web\Response
+	 */
     public function actionContact()
     {
         $model = new ContactForm();
@@ -99,6 +113,9 @@ class SiteController extends Controller
         }
     }
 
+	/**
+	 * @return string
+	 */
     public function actionAbout()
     {
         return $this->render('about');
@@ -107,26 +124,29 @@ class SiteController extends Controller
 	public function actionStore() 
 	{
 		if (! Yii::$app->request->post('text')) {
-			return Yii::t('app', 'Text is not sended');
+			return Yii::t('app', Yii::t('app', 'Text is not sended'));
 		}
 		if (! Yii::$app->request->post('id_to')) {
 			return Yii::t('app', 'Not entered user identifier');
 		}
+
 		$buffer = new MessageBuffer;
-		
-		$buffer->user_id = 1;
+
 		$buffer->data = Yii::$app->request->post('text');
-		$buffer->date = date('Y.m.d h:i:s');
 		$buffer->from = (int) Yii::$app->user->identity->id;
 		$buffer->to   = (int) Yii::$app->request->post('id_to');
-		
+		$buffer->cmd  = (Yii::$app->request->post('cmd')) ? Yii::$app->request->post('cmd') : self::DEFAULT_CMD;
+
 		return $buffer->save();
 	}
-	
+
+	/**
+	 * @return mixed
+	 */
 	public function actionLoad() 
 	{
 		$row = (new Query())
-			->select('id, MIN(date), data')
+			->select('id, MIN(date), data, from, cmd')
 			->from('message_buffer')
 			->where(['to' => Yii::$app->user->identity->id])
 			->one();
@@ -139,7 +159,10 @@ class SiteController extends Controller
 
 		return $res;
 	}
-	
+
+	/**
+	 * @return string
+	 */
 	public function actionGetUsersList()
     {
 		$result = Users::find()->addOrderBy('login ASC')->all();
