@@ -15,12 +15,6 @@ $this->title = 'My Yii Application';
         <div class="row" ng-controller="SendTextCtrl">
             <div id="list">
 				<?php
-				$items = [];
-				foreach ($users as $user) {
-					$items[$user['id']] = $user['login'];
-				}
-				
-				
 				echo yii\helpers\Html::dropDownList(
 					'users-list', 
 					'', 

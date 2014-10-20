@@ -32,19 +32,30 @@ AppAsset::register($this);
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => [
-                    ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']],
-                    Yii::$app->user->isGuest ?
-                        ['label' => 'Login', 'url' => ['/site/login']] :
-					['label' => 'Logout (' . Yii::$app->user->identity->login . ')',
-					 'url' => ['/site/logout'],
-					 'linkOptions' => ['data-method' => 'post']],
-					['label' => Yii::t('app', 'Users'), 'url' => ['/users/index']],
-				],
+			
+			// Формирование списка элементов навигационной панели 
+			$items = [];
+			$items[] = ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']];
+			if (Yii::$app->user->isGuest) {
+				// Опции доступные гостю
+				$items[] = ['label' => 'Login', 'url' => ['/site/login']];
+			} else {
+				// Опции доступные авторизованному пользователю
+				$items[] = ['label' => 'Logout (' . Yii::$app->user->identity->login . ')',
+						 'url' => ['/site/logout'],
+						 'linkOptions' => ['data-method' => 'post']];
+				// Опции доступные администравтору
+				if (Yii::$app->user->identity->login === 'admin') {
+					$items[] = ['label' => Yii::t('app', 'Users'), 'url' => ['/users/index']];
+					$items[] = ['label' => Yii::t('app', 'User Infos'), 'url' => ['/user-info/index']];
+				}
+			} 
+			
+			echo Nav::widget([
+				'options' => ['class' => 'navbar-nav navbar-right'],
+				'items' => $items,
 			]);
-            NavBar::end();
+			NavBar::end();
         ?>
 
         <div class="container">

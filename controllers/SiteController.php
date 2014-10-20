@@ -64,7 +64,13 @@ class SiteController extends Controller
 			->from('users')
 			->where(['<>', 'id', Yii::$app->user->identity->id])
 			->all();
-        return $this->render('index', ['users' => $users]);
+		
+		$items = [];
+		foreach ($users as $user) {
+			$items[$user['id']] = $user['login'];
+		}
+		
+        return $this->render('index', ['items' => $items]);
     }
 
 	/**
