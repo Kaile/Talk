@@ -135,6 +135,7 @@ class SiteController extends Controller
 		$buffer->data = Yii::$app->request->post('text');
 		$buffer->from = (int) Yii::$app->user->identity->id;
 		$buffer->to   = (int) Yii::$app->request->post('id_to');
+		echo Yii::$app->request->post('cmd');
 		$buffer->cmd  = (Yii::$app->request->post('cmd')) ? Yii::$app->request->post('cmd') : self::DEFAULT_CMD;
 
 		return $buffer->save();
@@ -145,19 +146,20 @@ class SiteController extends Controller
 	 */
 	public function actionLoad() 
 	{
-		$row = (new Query())
-			->select('id, MIN(date), data, from, cmd')
+		/**
+		 * @var $buff MessageBuffer
+		 */
+		$buff = (object) (new Query())
+			->select('id, MIN(date) as date, data, from, cmd')
 			->from('message_buffer')
 			->where(['to' => Yii::$app->user->identity->id])
 			->one();
 
-        $res = $row['data'];
-
-		if ( ! empty($res) ) {
-            MessageBuffer::deleteAll(['id' => $row['id']]);
+		if ( ! empty($buff->data) ) {
+            MessageBuffer::deleteAll(['id' => $buff->id]);
         }
 
-		return $res;
+		return Json::encode($buff);
 	}
 
 	/**

@@ -12,7 +12,7 @@ function SendTextCtrl($scope) {
 
     //TODO: Переделать все в класс
     function updateText(text) {
-        post(urlHelper('store'), {text: text, cmd: 'update'})
+        post(urlHelper('store'), {text: text, id_to: $('#users-list').val(), cmd: 'update'})
             .done(function() {
                 logInfo('Text on server is up to date');
             })
