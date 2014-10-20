@@ -32,17 +32,22 @@ function ReceiveTextCtrl($scope) {
         $scope.isOn = true;
 
         $scope.intervalId = setInterval(function() {
-            get('?r=site/load')
+            get(urlHelper('load'))
                 .done(function (data) {
-                    if (data.length) {
-                        softOutput($('#outputText'), data, intervalLoad);
+                    data = JSON.parse(data);
+                    logInfo(data);
+                    if (data.data !== null) {
+                        if (data.cmd === 'update') {
+                            $('#outputText').html('');
+                        }
+                        softOutput($('#outputText'), data.data, intervalLoad);
                     } else {
                         $scope.isOn = false;
                         clearInterval($scope.intervalId);
                     }
                 })
                 .fail(function () {
-                    console.error('Can\'t retrieve data');
+                    logError('Can\'t retrieve data');
                 });
         }, intervalLoad);
     };

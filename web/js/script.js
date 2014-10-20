@@ -1,3 +1,20 @@
+var DEBUG_DEV = 'develop';
+var DEBUG_PROD = 'production';
+
+var DEBUG_LEVEL = DEBUG_DEV;
+
+function logInfo(text) {
+    if (DEBUG_LEVEL === DEBUG_DEV) {
+        console.info(text);
+    }
+}
+
+function logError(text) {
+    if (DEBUG_LEVEL === DEBUG_PROD) {
+        console.error(text);
+    }
+}
+
 function urlHelper(action, ctrl) {
     var ctrl = ctrl || 'site';
     var prefix = '?r=';
