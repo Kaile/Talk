@@ -89,7 +89,7 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return false;
 	}
 
-    public function beforeSave()
+    public function beforeSave($insert)
     {
         $this->password = hash('sha256', $this->password);
 		$this->registered = date('Y/m/d h:i:s');
