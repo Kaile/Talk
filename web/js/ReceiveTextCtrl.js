@@ -38,9 +38,10 @@ function ReceiveTextCtrl($scope) {
                     logInfo(data);
                     if (data.data !== null) {
                         if (data.cmd === 'update') {
-                            $('#outputText').html('');
+                            $('#outputText').html(data.data);
+                        } else {
+                            softOutput($('#outputText'), data.data, intervalLoad);
                         }
-                        softOutput($('#outputText'), data.data, intervalLoad);
                     } else {
                         $scope.isOn = false;
                         clearInterval($scope.intervalId);
