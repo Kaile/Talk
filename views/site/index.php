@@ -1,7 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 /* @var $user app\models\Users */
-$this->title = 'My Yii Application';
+$this->title = Yii::t('app', 'The Talk');
 ?>
 <div class="site-index">
 
