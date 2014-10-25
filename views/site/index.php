@@ -6,11 +6,12 @@ $this->title = Yii::t('app', 'The Talk');
 <div class="site-index">
 
     <div ng-controller="ReceiveTextCtrl">
-        <div  class="text-placeholder" id="outputText"></div>
+        <div class="text-output" id="outputText"></div>
+		<div class="message-window"></div>
     </div>
 
 
-    <div class="body-content" style="margin: auto;">
+    <div class="body-content">
 
         <div class="row" ng-controller="SendTextCtrl">
             <div id="list">
@@ -25,7 +26,9 @@ $this->title = Yii::t('app', 'The Talk');
 					);
 				?>
 			</div>
-            <textarea class="text-placeholder"
+            <textarea
+				autofocus="true"
+				class="text-input"
 				ng-model="inputText"
 				ng-change="storeText()"
 			></textarea>

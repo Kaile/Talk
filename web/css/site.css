@@ -21,6 +21,12 @@ body {
     padding: 70px 15px 20px;
 }
 
+.content {
+    width: 50%;
+    min-width: 600px;
+    margin: auto;
+}
+
 .footer {
     height: 60px;
     background-color: #f5f5f5;
@@ -97,9 +103,31 @@ a.desc:after {
     margin: 0 0 15px 0;
 }
 
-.text-placeholder {
-	width: 400px; 
-	height: 200px; 
-	max-height: 200px; 
-	max-width: 400px;
+.text-input {
+	height: 60px;
+	max-height: 120px;
+    margin: 0 auto;
+    display: block;
 }
+
+.text-output {
+    height: 60px;
+    margin: 20px auto 0;
+    padding: 10px 5px;
+    border-bottom: dotted 1px #ddd !important;
+}
+
+.message-window {
+    margin: 0 auto;
+    height: 250px;
+    border-top: hidden !important;
+}
+
+.text-output,
+.text-input,
+.message-window{
+    width: 400px;
+    max-width: 400px;
+    border: 1px #ddd solid;
+}
+
