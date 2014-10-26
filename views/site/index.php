@@ -4,36 +4,37 @@
 $this->title = Yii::t('app', 'The Talk');
 ?>
 <div class="site-index">
-
-    <div ng-controller="ReceiveTextCtrl">
-        <div class="text-output" id="outputText"></div>
-		<div class="message-window"></div>
-    </div>
-
-
     <div class="body-content">
-
-        <div class="row" ng-controller="SendTextCtrl">
-            <div id="list">
-				<?php
-				echo yii\helpers\Html::dropDownList(
-					'users-list', 
-					'', 
-					$items,
-					[
-						'id' => 'users-list',
-					]
-					);
-				?>
+		<div class="chat-window">
+			<div ng-controller="ReceiveTextCtrl">
+				<div class="text-output" id="outputText"></div>
+				<div class="message-window"></div>
 			</div>
-            <textarea
-				autofocus="true"
-				class="text-input"
-				ng-model="inputText"
-				ng-change="storeText()"
-			></textarea>
 
-        </div>
+			<div class="row" ng-controller="SendTextCtrl">
+				<textarea
+					autofocus="true"
+					class="text-input"
+					ng-model="inputText"
+					ng-change="storeText()"
+				></textarea>
 
+			</div>
+		</div>
+		<div class="contact-list">
+			<div id="contact-title" class="title-font">
+				<?=Yii::t('app', 'Contact list')?>
+			</div>
+			<?php foreach ($items as $id => $ulogin): ?>
+				<div class="contact">
+					<span contact_id="<?=$id?>" style="display: none"></span>
+					<span class="contact-login">
+						<?=$ulogin?>
+					</span>
+				</div>
+			<?php endforeach ?>
+		</div>
     </div>
+
+
 </div>
