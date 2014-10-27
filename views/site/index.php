@@ -22,7 +22,7 @@ $this->title = Yii::t('app', 'The Talk');
 			</div>
 		</div>
 		<div class="contact-list">
-			<div id="contact-title" class="title-font">
+			<div id="contact-title">
 				<?=Yii::t('app', 'Contact list')?>
 			</div>
 			<?php foreach ($items as $id => $ulogin): ?>

@@ -26,6 +26,7 @@ class AppAsset extends AssetBundle
         'js/script.js',
         'js/ReceiveTextCtrl.js',
         'js/dom.elements.js',
+		'js/selectors.custom.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
