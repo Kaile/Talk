@@ -25,10 +25,11 @@ $this->title = Yii::t('app', 'The Talk');
 			<div id="contact-title">
 				<?=Yii::t('app', 'Contact list')?>
 			</div>
-			<?php foreach ($items as $id => $ulogin): ?>
-				<div contact_id="<?=$id?>" class="contact">
-					<span class="contact-login">
-						<?=$ulogin?>
+			<?php foreach ($users as $user): ?>
+				<?php $user = (object) $user; ?>
+				<div contact_id="<?=$user->id?>" class="contact">
+					<span class="contact-login" title="<?=$user->registered?>" >
+						<?=$user->login?>
 					</span>
 				</div>
 			<?php endforeach ?>

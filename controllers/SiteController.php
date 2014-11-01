@@ -60,17 +60,12 @@ class SiteController extends Controller
     {
 		$query = new Query();
 		$users = $query
-			->select('id, login')
+			->select('id, login, registered')
 			->from('users')
 			->where(['<>', 'id', Yii::$app->user->identity->id])
 			->all();
 		
-		$items = [];
-		foreach ($users as $user) {
-			$items[$user['id']] = $user['login'];
-		}
-		
-        return $this->render('index', ['items' => $items]);
+		return $this->render('index', ['users' => $users]);
     }
 
 	/**
