@@ -26,8 +26,7 @@ $this->title = Yii::t('app', 'The Talk');
 				<?=Yii::t('app', 'Contact list')?>
 			</div>
 			<?php foreach ($items as $id => $ulogin): ?>
-				<div class="contact">
-					<span contact_id="<?=$id?>" style="display: none"></span>
+				<div contact_id="<?=$id?>" class="contact">
 					<span class="contact-login">
 						<?=$ulogin?>
 					</span>

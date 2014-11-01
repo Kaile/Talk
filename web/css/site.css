@@ -140,13 +140,12 @@ a.desc:after {
   font-weight: bold;
   background: #ffffff;
   text-align: center;
-  margin-bottom: 1px;
-  border-radius: 15px;
+  margin: 2px 4px;
 }
 .contact:hover {
   cursor: pointer;
 }
 .contact-selected {
-  background: #f5f5f5 !important;
-  border-bottom: #dddddd 2px solid;
+  background: #808080 !important;
+  color: #ffffff;
 }
