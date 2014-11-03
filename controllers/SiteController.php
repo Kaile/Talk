@@ -64,7 +64,7 @@ class SiteController extends Controller
 			->from('users')
 			->where(['<>', 'id', Yii::$app->user->identity->id])
 			->all();
-		
+
 		return $this->render('index', ['users' => $users]);
     }
 
@@ -121,8 +121,13 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
-	
-	public function actionStore() 
+
+	/**
+	 * Действие для сохранения пользовтельских данных
+	 *
+	 * @return bool - результат сохранения данных
+	 */
+	public function actionStore()
 	{
 		if (! Yii::$app->request->post('text')) {
 			return Yii::t('app', Yii::t('app', 'Text is not sended'));
@@ -148,7 +153,7 @@ class SiteController extends Controller
 	/**
 	 * @return mixed
 	 */
-	public function actionLoad() 
+	public function actionLoad()
 	{
 		/**
 		 * @var $buff MessageBuffer

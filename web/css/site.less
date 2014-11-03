@@ -6,6 +6,10 @@
 @chat-width: 400px;
 @contact-list-width: 170px;
 
+@button-width: 70px;
+@button-height: 30px;
+@button-border-color: gray;
+
 .border-all(@color: @border-color; @width: @border-width; @style: @border-style) {
     border: @color @width @style;
 }
@@ -132,7 +136,7 @@ a.desc:after {
 .text-input {
     height: 60px;
     max-height: 120px;
-    .center-align(30px, 30px);
+    .center-align(30px, 3px);
 }
 
 .text-output {
@@ -208,4 +212,27 @@ a.desc:after {
 .contact-selected {
     background: @contact-sel-bgcolor !important;
     color: @contact-font-color;
+}
+
+.button {
+    .border-all;
+    background: @contact-bgcolor;
+    width: @button-width;
+    height: @button-height;
+    .center-align(0, 0);
+}
+
+.message {
+    .border-bottom;
+}
+
+.user-name {
+    padding: 2px 5px;
+    color: blue;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.text-of-message {
+    padding: 2px 5px;
 }

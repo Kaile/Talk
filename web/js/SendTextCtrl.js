@@ -55,4 +55,17 @@ function SendTextCtrl($scope) {
             $scope.turnOn();
         }
 	};
+
+	$scope.fixMessage = function() {
+		addMessage($scope.inputText);
+
+		post(urlHelper('fix'), {text: $scope.inputText, id_to: getContacts()})
+			.done(function() {
+				$scope.inputText = '';
+			})
+			.fail(function(data) {
+				logError('Can not to fix message to user: ' + getContacts());
+			});
+		$scope.inputText = '';
+	}
 }

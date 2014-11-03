@@ -8,7 +8,7 @@ $this->title = Yii::t('app', 'The Talk');
 		<div class="chat-window">
 			<div ng-controller="ReceiveTextCtrl">
 				<div class="text-output" id="outputText"></div>
-				<div class="message-window"></div>
+				<div id="message-window" class="message-window"></div>
 			</div>
 
 			<div class="row" ng-controller="SendTextCtrl">
@@ -18,7 +18,7 @@ $this->title = Yii::t('app', 'The Talk');
 					ng-model="inputText"
 					ng-change="storeText()"
 				></textarea>
-
+                <input id="message-fix" class="button" type="button" value="<?=Yii::t('app', 'Fix')?>" ng-click="fixMessage()" />
 			</div>
 		</div>
 		<div class="contact-list">

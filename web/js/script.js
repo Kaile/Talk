@@ -22,7 +22,7 @@ function urlHelper(action, ctrl) {
     return prefix + ctrl + '/' + action;
 }
 /**
- * 
+ *
  * @param {jQuery} selector - селектор области куда выводится текст
  * @param {String} text - выводимый текст
  * @param {Number} intervalLoad - интервал загрузки данных с сервера
@@ -31,16 +31,16 @@ function urlHelper(action, ctrl) {
 function softOutput(selector, text, intervalLoad, freq) {
 	var intervalLoad = Number(intervalLoad) || 300;
     var freq   = Number(freq) || 50;
-	
+
 	/**
 	 * Переменная определяющая количество символов, которые успеют появиться
 	 * до начала следующей загрузки текста с сервера
 	 * @type Number
 	 */
 	var textPortion = intervalLoad / freq;
-	
+
 	/**
-	 * Переменная определяющая количество символов, одновременно выводящихся 
+	 * Переменная определяющая количество символов, одновременно выводящихся
 	 * на экран при плавном появлении
 	 * @type Number
 	 */
@@ -101,4 +101,28 @@ function getContacts() {
     }
 
     return res;
+}
+
+function addMessage(text, userName, isSender) {
+    var text = text || ' ';
+    var userName = userName || 'Undefined';
+    var isSender = isSender || true;
+    var selector = document.getElementById('message-window');
+    var messageNode = document.createElement('div');
+    var userNode = messageNode.appendChild(document.createElement('span'));
+    var timeNode = messageNode.appendChild(document.createElement('span'));
+    var textNode = messageNode.appendChild(document.createElement('span'));
+
+    messageNode.setAttribute('class', 'message');
+
+    userNode.setAttribute('class', 'user-name');
+    userNode.appendChild(document.createTextNode(userName + ':'));
+
+    timeNode.setAttribute('class', 'time');
+    // timeNode.appendChild(document.createTextNode(time('Ymd'));
+
+    textNode.setAttribute('class', 'text-of-message');
+    textNode.appendChild(document.createTextNode(text));
+
+    selector.appendChild(messageNode);
 }
