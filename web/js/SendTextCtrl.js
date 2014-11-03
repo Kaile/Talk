@@ -9,10 +9,11 @@ function SendTextCtrl($scope) {
     $scope.isOn = false;
     $scope.intervalId = null;
     $scope.intervalPeriod = 1000; //ms
+    $scope.contacts = {};
 
     //TODO: Переделать все в класс
     function updateText(text) {
-        post(urlHelper('store'), {text: text, id_to: $('#users-list').val(), cmd: 'update'})
+        post(urlHelper('store'), {text: text, id_to: getContacts(), cmd: 'update'})
             .done(function() {
                 logInfo('Text on server is up to date');
             })
@@ -33,9 +34,9 @@ function SendTextCtrl($scope) {
 
             $scope.startIndex = $scope.inputText.length;
 
-            if (data.length) {
+            if (data.length && getContacts()) {
                 //TODO: Придумать принцип для удобного расширения команд и их обработки
-                post(urlHelper('store'), {text: data, id_to: $('#users-list').val(), cmd: 'store'})
+                post(urlHelper('store'), {text: data, id_to: getContacts(), cmd: 'store'})
                     .done(function () {
                         logInfo('text is saved');
                     })

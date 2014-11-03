@@ -78,3 +78,27 @@ function loadUsersList(selector) {
            console.log('Can\'t load users data');
         });
 }
+
+/**
+ * Функция возвращает объект с информацией о выделенных контактах в контакт-листе
+ * @param {String} сLSelector - селектор для контакт-листа
+ * @return {Object} - информация о выделенных контактах
+ */
+function getContacts() {
+    var cl = $('.contact-list');
+
+    if (typeof cl === 'undefined') {
+        throw new Error('Contact list selector is not found');
+    }
+
+    var contacts = cl.children('.contact-selected');
+    var res = [];
+    var len = contacts.length;
+
+    for (var i = 0; i < len; ++i) {
+        res.push(contacts.attr('contact_id'));
+        contacts = contacts.next();
+    }
+
+    return res;
+}

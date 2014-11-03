@@ -127,19 +127,22 @@ class SiteController extends Controller
 		if (! Yii::$app->request->post('text')) {
 			return Yii::t('app', Yii::t('app', 'Text is not sended'));
 		}
-		if (! Yii::$app->request->post('id_to')) {
+
+        $idTo = Yii::$app->request->post('id_to');
+
+		if (! is_array($idTo)) {
 			return Yii::t('app', 'Not entered user identifier');
 		}
 
-		$buffer = new MessageBuffer;
-
-		$buffer->data = Yii::$app->request->post('text');
-		$buffer->from = (int) Yii::$app->user->identity->id;
-		$buffer->to   = (int) Yii::$app->request->post('id_to');
-		echo Yii::$app->request->post('cmd');
-		$buffer->cmd  = (Yii::$app->request->post('cmd')) ? Yii::$app->request->post('cmd') : self::DEFAULT_CMD;
-
-		return $buffer->save();
+		foreach ($idTo as $userId) {
+            $buffer = new MessageBuffer;
+			$buffer->data = Yii::$app->request->post('text');
+			$buffer->from = (int) Yii::$app->user->identity->id;
+			$buffer->to = (int) $userId;
+			$buffer->cmd = (Yii::$app->request->post('cmd')) ? Yii::$app->request->post('cmd') : self::DEFAULT_CMD;
+			$buffer->save();
+		}
+		return true;
 	}
 
 	/**
@@ -167,9 +170,9 @@ class SiteController extends Controller
 	 * @return string
 	 */
 	public function actionGetUsersList()
-    {
+	{
 		$result = Users::find()->addOrderBy('login ASC')->all();
 
-        return Json::encode($result);
+		return Json::encode($result);
 	}
 }
