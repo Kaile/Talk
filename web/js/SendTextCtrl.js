@@ -1,4 +1,3 @@
-//TODO: Теперь встает проблема что отправлять при удалении текста
 /**
  * Контроллер, описывающий функции отправки данных на сервер
  * @param {Object} $scope - Пространство имен контроллера
@@ -57,15 +56,14 @@ function SendTextCtrl($scope) {
 	};
 
 	$scope.fixMessage = function() {
-		addMessage($scope.inputText);
+		get(urlHelper('fix'), {text: $scope.inputText, id_to: getContacts()})
+			.done(function(data) {
+				$('#message-window').append(data);
 
-		post(urlHelper('fix'), {text: $scope.inputText, id_to: getContacts()})
-			.done(function() {
-				$scope.inputText = '';
+				$('textarea.text-input').text('');
 			})
 			.fail(function(data) {
-				logError('Can not to fix message to user: ' + getContacts());
+				logError('Can not to fix message for user(s): ' + getContacts());
 			});
-		$scope.inputText = '';
 	}
 }

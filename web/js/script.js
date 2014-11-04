@@ -105,7 +105,7 @@ function getContacts() {
 
 function addMessage(text, userName, isSender) {
     var text = text || ' ';
-    var userName = userName || 'Undefined';
+    var userName = userName || 'Anonimous';
     var isSender = isSender || true;
     var selector = document.getElementById('message-window');
     var messageNode = document.createElement('div');

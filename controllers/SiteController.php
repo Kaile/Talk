@@ -12,6 +12,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Messages;
 
 class SiteController extends Controller
 {
@@ -179,5 +180,29 @@ class SiteController extends Controller
 		$result = Users::find()->addOrderBy('login ASC')->all();
 
 		return Json::encode($result);
+	}
+
+	public function actionFix()
+	{
+		if (! Yii::$app->request->get('text')) {
+			throw new Exception(Yii::t('app', Yii::t('app', 'Text is not sended')));
+		}
+
+		$idTo = Yii::$app->request->get('id_to');
+
+		if (! is_array($idTo)) {
+			throw new Exception(Yii::t('app', 'Not entered user identifier'));
+		}
+
+		foreach ($idTo as $userId) {
+			$buffer = new Messages;
+			$buffer->message = Yii::$app->request->get('text');
+			$buffer->from = (int) Yii::$app->user->identity->id;
+			$buffer->save();
+			$buffer->to = (int) $userId;
+		}
+		return $this->renderPartial('fix', [
+			'message' => Yii::$app->request->get('text'),
+		]);
 	}
 }
