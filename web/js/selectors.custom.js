@@ -5,5 +5,6 @@
 $().ready(function() {
    $('.contact').on('click', function() {
        $(this).toggleClass('contact-selected');
+       $('.text-input').focus();
    });
 });
