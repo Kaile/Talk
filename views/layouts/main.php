@@ -12,10 +12,11 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="<?= Yii::$app->language ?>" ng-app>
 <head>
     <meta charset="<?= Yii::$app->charset ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -26,29 +27,39 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'My Company',
+                'brandLabel' => 'The Talk',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
+                    'class' => 'navbar-inverse navbar-fixed-top title-font',
                 ],
             ]);
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => [
-                    ['label' => 'Home', 'url' => ['/site/index']],
-                    ['label' => 'About', 'url' => ['/site/about']],
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
-                    Yii::$app->user->isGuest ?
-                        ['label' => 'Login', 'url' => ['/site/login']] :
-                        ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                            'url' => ['/site/logout'],
-                            'linkOptions' => ['data-method' => 'post']],
-                ],
-            ]);
-            NavBar::end();
+			
+			// Формирование списка элементов навигационной панели 
+			$items = [];
+			$items[] = ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']];
+			if (Yii::$app->user->isGuest) {
+				// Опции доступные гостю
+				$items[] = ['label' => 'Login', 'url' => ['/site/login']];
+			} else {
+				// Опции доступные авторизованному пользователю
+				$items[] = ['label' => 'Logout (' . Yii::$app->user->identity->login . ')',
+						 'url' => ['/site/logout'],
+						 'linkOptions' => ['data-method' => 'post']];
+				// Опции доступные администравтору
+				if (Yii::$app->user->identity->login === 'admin') {
+					$items[] = ['label' => Yii::t('app', 'Users'), 'url' => ['/users/index']];
+					$items[] = ['label' => Yii::t('app', 'User Infos'), 'url' => ['/user-info/index']];
+				}
+			} 
+			
+			echo Nav::widget([
+				'options' => ['class' => 'navbar-nav navbar-right'],
+				'items' => $items,
+			]);
+			NavBar::end();
         ?>
 
-        <div class="container">
+        <div class="container content">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>

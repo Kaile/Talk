@@ -3,6 +3,7 @@
 $params = require(__DIR__ . '/params.php');
 
 $config = [
+	'language' => 'ru_RU',
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
@@ -10,12 +11,15 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'ZLA_E-WrKW1I3OHdkTLG7y6Ocjy8FlaK',
+			'parsers' => [
+				'application/json' => 'yii\web\JsonParser',
+			]
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\Users',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
@@ -42,6 +46,19 @@ $config = [
             'enablePrettyUrl' => false,
             'showScriptName' => false,
         ],
+		'i18n' => [
+			'translations' => [
+				'app*' => [
+					'class' => 'yii\i18n\PhpMessageSource',
+					'basePath' => '@app/messages',
+					'sourceLanguage' => 'en-US',
+					'fileMap' => [
+						'app' => 'app.php',
+						'app/error' => 'error.php',
+					],
+				],
+			],
+		],
     ],
     'params' => $params,
 ];

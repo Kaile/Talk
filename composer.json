@@ -17,7 +17,8 @@
         "php": ">=5.4.0",
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "*",
-        "yiisoft/yii2-swiftmailer": "*"
+        "yiisoft/yii2-swiftmailer": "*",
+        "components/angular.js": "1.2.*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
@@ -34,6 +35,9 @@
         ]
     },
     "extra": {
+    	"asset-installer-paths": {
+    		"bower-asset-library": "vendor/bower"
+    	},
         "yii\\composer\\Installer::postCreateProject": {
             "setPermission": [
                 {

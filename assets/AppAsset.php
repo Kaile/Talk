@@ -21,9 +21,16 @@ class AppAsset extends AssetBundle
         'css/site.css',
     ];
     public $js = [
+		'js/SendTextCtrl.js',
+		'js/request.js',
+        'js/script.js',
+        'js/ReceiveTextCtrl.js',
+        'js/dom.elements.js',
+		'js/selectors.custom.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+		'app\assets\AngularAsset',
     ];
 }
