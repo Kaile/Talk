@@ -16,7 +16,7 @@ use yii\helpers\Url;
 
 
 <div id="register-module">
-	<span><?=Yii::t('app', 'Registration')?></span>
+	<span class="header"><?=Yii::t('app', 'Registration')?></span>
 
 	<?php $form = \yii\bootstrap\ActiveForm::begin(['action' => Url::to(['site/register'])]); ?>
 
@@ -28,7 +28,7 @@ use yii\helpers\Url;
 
 	<?= $form->field($registration, 'email')->textInput(); ?>
 
-	<?= Html::submitButton(Yii::t('app', 'Register'), ['class' => 'btn']); ?>
+	<?= Html::submitButton(Yii::t('app', 'Register'), ['class' => 'btn btn-primary']); ?>
 
 	<?php \yii\bootstrap\ActiveForm::end() ?>
 </div>

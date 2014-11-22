@@ -12,6 +12,6 @@ $this->title = 'Welcome to the Talk';
 ?>
 
 <div class="site-index center-center">
-	<h1><?=Yii::t('app', 'Welcome to the Talk messenger')?></h1>
+	<h1 class="shadow"><?=Yii::t('app', 'Welcome to the Talk messenger')?></h1>
 	<?=$this->render('register', ['registration' => $registration]);?>
 </div>
