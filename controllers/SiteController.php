@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\MessageBuffer;
+use app\models\RegistraionModel;
 use app\models\Users;
 use Yii;
 use yii\db\Query;
@@ -59,6 +60,14 @@ class SiteController extends Controller
 	 */
     public function actionIndex()
     {
+		if (Yii::$app->user->isGuest) {
+			$registration = new RegistraionModel();
+
+			return $this->render('index', [
+				'registration' => $registration,
+			]);
+		}
+
 		$query = new Query();
 		$users = $query
 			->select('id, login, registered')
@@ -66,7 +75,9 @@ class SiteController extends Controller
 			->where(['<>', 'id', Yii::$app->user->identity->id])
 			->all();
 
-		return $this->render('index', ['users' => $users]);
+		return $this->render('talk', [
+			'users' => $users,
+		]);
     }
 
 	/**
@@ -204,5 +215,32 @@ class SiteController extends Controller
 		return $this->renderPartial('fix', [
 			'message' => Yii::$app->request->get('text'),
 		]);
+		
+	}
+
+	public function actionRegister()
+	{
+		$model = new RegistraionModel();
+
+		if ( !$model->load(Yii::$app->request->post()) || !$model->validate() ) {
+			return $this->render('index', ['registration' => $model]);
+		} else {
+			$newUser = new Users();
+
+			$newUser->login = $model->login;
+			$newUser->password = $model->password;
+
+			if ( !$newUser->save()) {
+				return $this->render('exception', ['message' => Yii::t('app', 'Sorry! Can not create new user. It\'s my error.')]);
+			}
+
+			$loginForm = new LoginForm();
+
+			$loginForm->login = $model->login;
+			$loginForm->password = $model->password;
+
+			$loginForm->login();
+			$this->goHome();
+		}
 	}
 }
