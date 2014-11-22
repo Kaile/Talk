@@ -181,3 +181,6 @@ a.desc:after {
   font-size: 12px;
   color: #aaa;
 }
+.center-center {
+  text-align: center;
+}
