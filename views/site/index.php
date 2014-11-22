@@ -8,7 +8,7 @@
 
 /* @var $this Yii\web\View */
 
-$this->title = 'Welcome to the Talk';
+$this->title = Yii::t('app', 'Welcome to the Talk');
 ?>
 
 <div class="site-index center-center">

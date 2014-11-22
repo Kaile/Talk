@@ -39,10 +39,10 @@ AppAsset::register($this);
 			$items[] = ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']];
 			if (Yii::$app->user->isGuest) {
 				// Опции доступные гостю
-				$items[] = ['label' => 'Login', 'url' => ['/site/login']];
+				$items[] = ['label' => Yii::t('app', 'Log In'), 'url' => ['/site/login']];
 			} else {
 				// Опции доступные авторизованному пользователю
-				$items[] = ['label' => 'Logout (' . Yii::$app->user->identity->login . ')',
+				$items[] = ['label' => Yii::t('app', 'Log Out ({login})', ['login' => Yii::$app->user->identity->login]),
 						 'url' => ['/site/logout'],
 						 'linkOptions' => ['data-method' => 'post']];
 				// Опции доступные администравтору
