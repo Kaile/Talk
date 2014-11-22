@@ -1,3 +1,5 @@
+// out: site.css
+
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab&subset=latin,cyrillic);
 
 @border-color: #ddd;
@@ -25,6 +27,18 @@
 .chat-width() {
     width: @chat-width;
     max-width: @chat-width;
+}
+
+.box-shadow(@color: #eee) {
+    box-shadow: @color 0 0 10px 5px;
+    -moz-box-shadow: @color 0 0 10px 5px;
+    -o-box-shadow: @color 0 0 10px 5px;
+    -webkit-box-shadow: @color 0 0 10px 5px;
+    -ms-box-shadow: @color 0 0 10px 5px;
+}
+
+.text-shadow(@color: #eee) {
+    text-shadow: @color 7px 6px;
 }
 
 .center-align(@top: 0; @bottom: 0) {
@@ -246,4 +260,27 @@ a.desc:after {
 .time {
     font-size: 12px;
     color: #aaa;
+}
+
+.center-center {
+    text-align: center;
+}
+
+#register-module {
+    .center-align(50px);
+    .border-all();
+    padding: 30px 20px;
+    width: 30%;
+    box-shadow: #eee 0 0 10px 5px;
+}
+
+.header {
+    font-size: 22px;
+    .title-font;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.shadow {
+    .text-shadow();
 }
